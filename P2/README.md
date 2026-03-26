@@ -112,4 +112,12 @@ Esto permite pasar toda la información entre funciones sin usar variables globa
 Esta práctica permite familiarizarse con ncurses y con la creación de interfaces interactivas en modo texto. 
 Además, programar Pong es una buena forma de practicar animación, colisiones, entrada de teclado y control del flujo del juego en tiempo real.
 
+-------------------------------------------------------------
+## Imágenes del programa
+
+<img width="543" height="376" alt="image" src="https://github.com/user-attachments/assets/cb275cb4-502e-411a-b414-3c864a69d526" />  
+<img width="556" height="388" alt="image" src="https://github.com/user-attachments/assets/cac30fff-2b28-4573-9ad8-33813303ecb3" />  
+
+
+
 
