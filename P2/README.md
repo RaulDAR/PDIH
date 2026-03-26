@@ -116,7 +116,12 @@ Además, programar Pong es una buena forma de practicar animación, colisiones, 
 ## Imágenes del programa
 
 <img width="543" height="376" alt="image" src="https://github.com/user-attachments/assets/cb275cb4-502e-411a-b414-3c864a69d526" />  
+Pantalla de inicio.
 <img width="556" height="388" alt="image" src="https://github.com/user-attachments/assets/cac30fff-2b28-4573-9ad8-33813303ecb3" />  
+Juego.
+<img width="547" height="386" alt="image" src="https://github.com/user-attachments/assets/44881db6-8354-4f0b-be5f-9bb509bad1cf" />  
+Pantalla final
+
 
 
 
