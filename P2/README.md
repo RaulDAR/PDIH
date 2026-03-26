@@ -74,20 +74,20 @@ Aumentarlo facilita el juego; reducirlo lo hace más difícil.
 ### Colores del juego
 Los pares de colores se definen en la función `inicializar_colores()`:
 
-init_pair(COLOR_TITULO,   COLOR_YELLOW, COLOR_BLACK);
-init_pair(COLOR_PELOTA,   COLOR_RED,    COLOR_BLACK);
-init_pair(COLOR_PALA1,    COLOR_CYAN,   COLOR_BLACK);
-init_pair(COLOR_PALA2,    COLOR_GREEN,  COLOR_BLACK);
-init_pair(COLOR_MARCADOR, COLOR_WHITE,  COLOR_BLACK);
-init_pair(COLOR_GANADOR,  COLOR_BLACK,  COLOR_YELLOW);
-init_pair(COLOR_BORDE,    COLOR_BLUE,   COLOR_BLACK);
+init_pair(COLOR_TITULO,   COLOR_YELLOW, COLOR_BLACK);  
+init_pair(COLOR_PELOTA,   COLOR_RED,    COLOR_BLACK);  
+init_pair(COLOR_PALA1,    COLOR_CYAN,   COLOR_BLACK);  
+init_pair(COLOR_PALA2,    COLOR_GREEN,  COLOR_BLACK);  
+init_pair(COLOR_MARCADOR, COLOR_WHITE,  COLOR_BLACK);  
+init_pair(COLOR_GANADOR,  COLOR_BLACK,  COLOR_YELLOW);  
+init_pair(COLOR_BORDE,    COLOR_BLUE,   COLOR_BLACK);  
 
 Estos valores pueden modificarse para personalizar el aspecto del juego.
 
 ### Velocidad inicial de la pelota
 
-juego->vel_x = (rand() % 2 == 0) ?  1.5f : -1.5f;
-juego->vel_y = (rand() % 2 == 0) ?  1.0f : -1.0f;
+juego->vel_x = (rand() % 2 == 0) ?  1.5f : -1.5f;  
+juego->vel_y = (rand() % 2 == 0) ?  1.0f : -1.0f;  
 
 Modificando estos valores se puede ajustar la dificultad o la rapidez del juego.
 
@@ -96,13 +96,13 @@ Modificando estos valores se puede ajustar la dificultad o la rapidez del juego.
 
 El estado del juego se almacena en una estructura:
 
-typedef struct {
-int filas, columnas;
-float pelota_x, pelota_y;
-float vel_x, vel_y;
-int pala1_y, pala2_y;
-int puntos1, puntos2;
-} EstadoJuego;
+typedef struct {  
+int filas, columnas;  
+float pelota_x, pelota_y;  
+float vel_x, vel_y;  
+int pala1_y, pala2_y;  
+int puntos1, puntos2;  
+} EstadoJuego;  
 
 Esto permite pasar toda la información entre funciones sin usar variables globales.
 
