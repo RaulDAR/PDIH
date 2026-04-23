@@ -1,0 +1,109 @@
+#include <LiquidCrystal.h>
+
+// LCD: RS, E, D4, D5, D6, D7. Pines a los que conecté los pines del LCD
+LiquidCrystal lcd(12, 11, 5, 4, 3, 6);
+
+// Pines 
+const int PIN_BOTON = 2;
+const int PIN_LED = 8;
+const int PIN_BUZZER = 9;
+
+// Tiempos
+const unsigned long TIEMPO_PUNTO = 200;      // <200 ms = punto
+const unsigned long TIEMPO_LETRA = 1000;     // silencio >1s = fin de letra
+const unsigned long DEBOUNCE = 30;           // anti-rebote porque el botón no cambia perfectamente de valor alto a bajo
+
+// Variables
+String secuencia = "";
+unsigned long tiempoCambio = 0;
+bool estadoAnterior = HIGH;
+
+// Tabla Morse
+struct Morse {
+  const char* codigo;		// Variable del struct en el que va la secuencia de puntos y rayas que añado
+  char letra;
+};
+
+Morse tabla[] = {
+  {".-", 'A'},   {"-...", 'B'}, {"-.-.", 'C'}, {"-..", 'D'},
+  {".", 'E'},    {"..-.", 'F'}, {"--.", 'G'},  {"....", 'H'},
+  {"..", 'I'},   {".---", 'J'}, {"-.-", 'K'},  {".-..", 'L'},
+  {"--", 'M'},   {"-.", 'N'},   {"---", 'O'},  {".--.", 'P'},
+  {"--.-", 'Q'}, {".-.", 'R'},  {"...", 'S'},  {"-", 'T'},
+  {"..-", 'U'},  {"...-", 'V'}, {".--", 'W'},  {"-..-", 'X'},
+  {"-.--", 'Y'}, {"--..", 'Z'},
+  {"-----", '0'}, {".----", '1'}, {"..---", '2'}, {"...--", '3'},
+  {"....-", '4'}, {".....", '5'}, {"-....", '6'}, {"--...", '7'},
+  {"---..", '8'}, {"----.", '9'}
+};
+
+char decodificar(String s) {
+  for (int i = 0; i < sizeof(tabla)/sizeof(Morse); i++) {		// Este if recorre todos los elementos del Array tabla[]
+    if (s.equals(tabla[i].codigo)) return tabla[i].letra;		// Comprueba si el la letra que añadí existe
+  }
+  return '?';		// Si la secuencia no existe devuelve una ?
+}
+
+void setup() {
+  pinMode(PIN_BOTON, INPUT_PULLUP);		// Inicializa los pines del arduino
+  pinMode(PIN_LED, OUTPUT);				
+  pinMode(PIN_BUZZER, OUTPUT);
+
+  lcd.begin(16, 2);						// Inicializo el LCD
+  lcd.print("Decod. Morse");			// Frase inicial
+  delay(3500);							// Tiempo de la frase inicial
+  lcd.clear();
+}
+
+void loop() {
+  bool estado = digitalRead(PIN_BOTON);		// Leo el estado del botón
+  unsigned long ahora = millis();			// Para distinguir . de - cuando suelte el botón. Tiempo desde que se enciende el arduino
+
+  // Antirebote
+  if (estado != estadoAnterior) {
+    delay(DEBOUNCE);				
+    estado = digitalRead(PIN_BOTON);
+  }
+
+  // Detectar inicio de pulsación
+  if (estado == LOW && estadoAnterior == HIGH) {		// Como lo inicializo con PULLUP es activo a nivel bajo
+    tiempoCambio = ahora;								// Momento en que se pulsa el botón
+    digitalWrite(PIN_LED, HIGH);
+    tone(PIN_BUZZER, 800);
+  }
+
+  // Detectar fin de pulsación
+  if (estado == HIGH && estadoAnterior == LOW) {
+    unsigned long duracion = ahora - tiempoCambio;
+    digitalWrite(PIN_LED, LOW);
+    noTone(PIN_BUZZER);
+
+    if (duracion < TIEMPO_PUNTO) {
+      secuencia += ".";
+    } else {
+      secuencia += "-";
+    }
+
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Seq: ");
+    lcd.print(secuencia);
+
+    tiempoCambio = ahora;
+  }
+
+  // Fin de letra por silencio
+  if (estado == HIGH && secuencia.length() > 0 && (ahora - tiempoCambio > TIEMPO_LETRA)) {
+    char letra = decodificar(secuencia);		// Si pasa el tiempo suficiente llamo a la función para decodificar el código
+
+    lcd.setCursor(0, 1);
+    lcd.print("Letra: ");
+    lcd.print(letra);
+
+    secuencia = "";								// Limpio la secuencia
+    delay(2500);								// Tiempo que se muestra la letra en la pantalla
+    lcd.clear();
+  }
+
+  estadoAnterior = estado;
+}
