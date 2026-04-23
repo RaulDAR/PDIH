@@ -1,14 +1,14 @@
-# 📟 Decodificador de Código Morse con LCD
+#  Decodificador de Código Morse con LCD
 
 Este proyecto implementa un sistema de traducción de código Morse a caracteres alfanuméricos en tiempo real utilizando un Arduino Uno. El sistema permite al usuario introducir señales mediante un pulsador y visualizar la traducción directamente en una pantalla LCD.
 
-## 🚀 Características
+##  Características
 * **Interpretación Inteligente:** Diferencia entre puntos y rayas según la duración de la pulsación.
 * **Feedback Dual:** El sistema emite un pitido (buzzer) y una señal lumínica (LED) sincronizados con la pulsación.
 * **Pantalla Dinámica:** Muestra la secuencia de símbolos en curso y el carácter final obtenido.
 * **Diccionario Completo:** Incluye soporte para el abecedario (A-Z) y números (0-9).
 
-## 🛠️ Hardware Utilizado
+##  Hardware Utilizado
 * **Arduino Uno R3**
 * **Pantalla LCD 16x2**
 * **Pulsador (Push button)**
@@ -20,7 +20,7 @@ Este proyecto implementa un sistema de traducción de código Morse a caracteres
 
 
 
-## 🔌 Conexiones (Pinout)
+##  Conexiones (Pinout)
 
 | Componente | Pin Arduino | Función |
 | :--- | :--- | :--- |
@@ -34,7 +34,7 @@ Este proyecto implementa un sistema de traducción de código Morse a caracteres
 <img width="901" height="483" alt="image" src="https://github.com/user-attachments/assets/9a9d61e3-9cdd-408f-b3fa-4b9a08f94fee" />
 
 
-## 📄 Funcionamiento y Tiempos
+##  Funcionamiento y Tiempos
 
 El código gestiona la lógica Morse mediante el cálculo de duraciones con la función `millis()`, evitando el bloqueo del programa:
 
@@ -47,5 +47,5 @@ El código gestiona la lógica Morse mediante el cálculo de duraciones con la f
     * Si la secuencia es válida, se imprime la letra en la fila inferior del LCD durante 2.5 segundos.
     * Si no existe coincidencia, se muestra un símbolo de interrogación (`?`).
 
-## ⚙️ Configuración del Software
+##  Configuración del Software
 El código utiliza la librería estándar `<LiquidCrystal.h>`, por lo que no es necesario instalar dependencias externas. Asegúrate de ajustar el potenciómetro de contraste si no visualizas el texto al iniciar el circuito.
