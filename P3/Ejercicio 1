@@ -1,0 +1,30 @@
+const int PIN_LED_ROJO = 11;
+const int PIN_LED_AMARILLO = 12;
+const int PIN_LED_VERDE = 13;
+const int INTERVALO = 1500;
+
+void setup() {
+  pinMode(PIN_LED_ROJO, OUTPUT);
+  pinMode(PIN_LED_AMARILLO, OUTPUT);
+  pinMode(PIN_LED_VERDE, OUTPUT);
+}
+
+void loop() {
+  // Encender ROJO, apagar los demás
+  digitalWrite(PIN_LED_ROJO, HIGH);
+  digitalWrite(PIN_LED_AMARILLO, LOW);
+  digitalWrite(PIN_LED_VERDE, LOW);
+  delay(INTERVALO);
+
+  // Encender AMARILLO, apagar los demás
+  digitalWrite(PIN_LED_ROJO, LOW);
+  digitalWrite(PIN_LED_AMARILLO, HIGH);
+  digitalWrite(PIN_LED_VERDE, LOW);
+  delay(INTERVALO);
+
+  // Encender VERDE, apagar los demás
+  digitalWrite(PIN_LED_ROJO, LOW);
+  digitalWrite(PIN_LED_AMARILLO, LOW);
+  digitalWrite(PIN_LED_VERDE, HIGH);
+  delay(INTERVALO);
+}
