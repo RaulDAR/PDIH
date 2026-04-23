@@ -84,7 +84,7 @@ Uso de una fotorresistencia para medir la luz ambiental y ajustar el brillo de u
 ###  Hardware
 * LDR, Resistencia 10kΩ (divisor), LED Rojo.
 
-### 🔌 Conexiones
+###  Conexiones
 * **Entrada:** Pin Analógico **A0**.
 * **Salida:** Pin PWM **D9**.
 
@@ -112,5 +112,5 @@ Control de un motor de corriente continua utilizando un transistor NPN como inte
 
 ---
 
-## 🚀 Conclusión
+##  Conclusión
 Esta serie de ejercicios demuestra la versatilidad de Arduino para interactuar con el mundo físico, pasando de lógicas digitales simples a sistemas complejos que integran sensores analógicos, actuadores de potencia y procesamiento de señales en tiempo real.
