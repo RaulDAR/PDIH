@@ -25,6 +25,9 @@ Consiste en la creación de un ciclo de luces básico (Rojo, Amarillo y Verde) s
 | LED Amarillo | D12 |
 | LED Verde | D13 |
 
+<img width="910" height="281" alt="image" src="https://github.com/user-attachments/assets/569d0905-46b4-4ac5-ab45-67acd5638cc9" />
+
+
 ---
 
 ## Ejercicio 2: Semáforo con Interrupción por Pulsador
@@ -36,6 +39,9 @@ Evolución del diseño anterior que añade un pulsador. El sistema alterna entre
 ### 📄 Funcionamiento
 * **Modo Prioridad:** Al pulsar (lectura `LOW`), el semáforo cambia a **Rojo** inmediatamente.
 * **Modo Secuencial:** Mientras no se pulse, ejecuta el ciclo normal Rojo -> Amarillo -> Verde.
+
+<img width="918" height="321" alt="image" src="https://github.com/user-attachments/assets/a1ed7d50-a7fa-4d99-a2e0-57068de4e48f" />
+
 
 ---
 
@@ -51,6 +57,9 @@ Implementación de una secuencia de barrido de ida y vuelta utilizando un **arra
 ### 📄 Funcionamiento
 El código recorre el array de leds encendiéndolos uno a uno con un `RETARDO` de 200ms, creando un efecto visual de movimiento simétrico.
 
+<img width="897" height="343" alt="image" src="https://github.com/user-attachments/assets/0932b1a4-8709-41c7-b8a6-5ead1de93280" />
+
+
 ---
 
 ## Ejercicio 4: Sensor de Proximidad con Alerta Sonora
@@ -63,6 +72,9 @@ Sistema de alarma que mide distancias con un sensor HC-SR04 y emite pitidos cuya
 * **Medición:** Calcula la distancia en cm mediante el tiempo de respuesta del eco.
 * **Mapeo:** La función `map()` ajusta las pausas entre pitidos entre 50ms (muy cerca) y 1000ms (lejos).
 * **Rango:** Activo hasta los 100 cm.
+
+<img width="892" height="404" alt="image" src="https://github.com/user-attachments/assets/64a5c260-065e-4465-93f1-53a13818fe31" />
+
 
 ---
 
@@ -79,6 +91,10 @@ Uso de una fotorresistencia para medir la luz ambiental y ajustar el brillo de u
 ### 📄 Funcionamiento
 A menor luz detectada en A0, el Arduino aumenta el ciclo de trabajo en el Pin 9, haciendo que el LED brille más en la oscuridad y se apague con luz intensa.
 
+
+<img width="904" height="354" alt="image" src="https://github.com/user-attachments/assets/0593e41b-a4bd-4cf3-8433-c4fe7972e312" />
+
+
 ---
 
 ## Ejercicio 6: Control de Motor CC con Transistor y Pulsador
@@ -90,6 +106,9 @@ Control de un motor de corriente continua utilizando un transistor NPN como inte
 ### 📄 Funcionamiento
 * El Arduino no alimenta al motor directamente; envía una señal de control a la **base** del transistor.
 * Al presionar el pulsador, el transistor permite el paso de corriente de la batería al motor, activando el giro.
+
+<img width="933" height="336" alt="image" src="https://github.com/user-attachments/assets/d97ab9bd-fb59-45f2-8a61-62b823181317" />
+
 
 ---
 
