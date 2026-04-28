@@ -1,0 +1,69 @@
+newpath
+
+% Linea derecha
+
+400 400 moveto
+488 485 lineto
+400 517 lineto
+1 0 0 setrgbcolor
+fill
+stroke
+
+% Linea izquierda
+
+400 400 moveto
+312 485 lineto
+494 494 lineto
+1 0 0 setrgbcolor
+fill
+stroke
+
+% Circulo derecho
+
+450 518 50 305 185 arc
+1 0 0 setrgbcolor
+fill
+stroke
+
+% Circulo izquierdo
+
+350 518 50 355 235 arc
+1 0 0 setrgbcolor
+fill
+stroke
+
+% Relleno el trozo que falta
+
+306 495 moveto
+400 494 lineto
+400 525 lineto
+1 0 0 setrgbcolor
+fill
+stroke
+
+
+% Después de hacer varios ajustes me quedaba un hueco vacío en el medio. Aquí lo relleno
+
+
+312 485 moveto
+400 510 lineto
+400 400 lineto
+fill
+stroke
+
+
+% Texto en la tarjeta de visita
+
+/Times-Italic findfont 14 scalefont setfont
+0 setgray
+100 280 moveto (Con diez canones por banda,) show
+0.2 setgray
+100 260 moveto (viento en popa a toda vela,) show
+
+/Times-Bold findfont 14 scalefont setfont
+0.4 setgray
+100 240 moveto (no corta el mar, sino vuela) show
+0.6 setgray
+100 220 moveto (un velero bergantin) show
+
+showpage
