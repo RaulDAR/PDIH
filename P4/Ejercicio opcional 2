@@ -1,0 +1,166 @@
+% Título de la tabla 
+/Helvetica findfont 20 scalefont setfont
+0 setgray
+100 750 moveto (Tabla con datos) show
+
+
+% Líneas Horizontales (voy a hacer 10 celdas así que necesito 11 lineas horizontales)
+
+newpath
+100 700 moveto 
+500 700 lineto
+
+100 650 moveto 
+500 650 lineto
+
+100 600 moveto 
+500 600 lineto
+
+100 550 moveto 
+500 550 lineto
+
+100 500 moveto 
+500 500 lineto
+
+100 450 moveto 
+500 450 lineto
+
+100 400 moveto 
+500 400 lineto
+
+100 350 moveto 
+500 350 lineto
+
+100 300 moveto 
+500 300 lineto
+
+100 250 moveto 
+500 250 lineto
+
+100 200 moveto 
+500 200 lineto
+stroke
+
+% Líneas Verticales (una en cada borde y otra en el medio)
+
+newpath
+100 700 moveto 
+100 200 lineto % Borde izquierdo
+
+300 700 moveto 
+300 200 lineto % Separador central
+
+500 700 moveto 
+500 200 lineto % Borde derecho
+stroke
+
+% Texto de la tabla
+
+/Helvetica findfont 12 scalefont setfont
+0 setgray 
+
+% Texto de la primera columna
+
+180 670 moveto (Dato 1) show
+180 620 moveto (Dato 2) show
+180 570 moveto (Dato 3) show
+180 520 moveto (Dato 4) show
+180 470 moveto (Dato 5) show
+180 420 moveto (Dato 6) show
+180 370 moveto (Dato 7) show
+180 320 moveto (Dato 8) show
+180 270 moveto (Dato 9) show
+180 220 moveto (Dato 10) show
+
+% Texto de la segunda columna
+
+392 670 moveto (15) show
+395 620 moveto (9) show
+392 570 moveto (12) show
+395 520 moveto (5) show
+392 470 moveto (14) show
+392 420 moveto (10) show
+392 370 moveto (11) show
+395 320 moveto (5) show
+395 270 moveto (6) show
+392 220 moveto (13) show
+
+showpage
+
+
+% Segunda página
+
+% Título de la gráfica
+/Helvetica-Bold findfont 20 scalefont setfont
+0 setgray
+100 750 moveto (Grafica de Valores de la Tabla) show
+
+% Ejes de la gráfica
+newpath
+0 setgray
+2 setlinewidth
+100 700 moveto 100 200 lineto
+100 200 moveto 500 200 lineto 
+stroke
+
+% Líneas de la gáfica (para que se note la difetencia entre los distintos valores los multiplico por 20 para que haya más espacio entre ellos) (uso la fórmula 200 + valor*20. sumo 200 para que esté en medio de la página)
+
+newpath
+0.2 0.5 0.8 setrgbcolor
+3 setlinewidth
+140 500 moveto
+180 380 lineto
+220 440 lineto
+260 300 lineto
+300 480 lineto
+340 400 lineto
+380 420 lineto
+420 300 lineto
+460 320 lineto
+500 460 lineto
+stroke
+
+% Puntos de la gáfica (son círculos muy pequeños con radio = 4)
+0 setgray
+
+newpath
+140 500 4 0 360 arc
+fill
+
+newpath
+180 380 4 0 360 arc
+fill
+
+newpath
+220 440 4 0 360 arc
+fill
+
+newpath
+260 300 4 0 360 arc
+fill
+
+newpath
+300 480 4 0 360 arc
+fill
+
+newpath
+340 400 4 0 360 arc
+fill
+
+newpath
+380 420 4 0 360 arc
+fill
+
+newpath
+420 300 4 0 360 arc
+fill
+
+newpath
+460 320 4 0 360 arc
+fill
+
+newpath
+500 460 4 0 360 arc
+fill
+
+showpage
