@@ -1,0 +1,36 @@
+1 0.7 0.8 setrgbcolor 
+newpath
+110 360 moveto
+190 360 lineto
+190 440 lineto
+110 440 lineto
+closepath 
+fill
+
+% Dibujo delos 2 cuadrados rotados
+
+0.5 0 0.5 setrgbcolor 
+newpath
+150 442 moveto
+192 400 lineto
+150 357 lineto
+107 400 lineto
+closepath
+fill
+
+% Texto de la tarjeta de visita
+
+0 setgray
+/Helvetica-Bold findfont 20 scalefont setfont
+300 450 moveto (Pepito Grillo) show
+
+/Helvetica findfont 12 scalefont setfont
+300 430 moveto (Profesor de Pinocho) show
+
+/Helvetica findfont 10 scalefont setfont
+300 390 moveto (Las aventuras de Pinocho) show
+300 375 moveto (Casa de Geppetto) show
+300 360 moveto (Collodi, Toscana, Italia) show
+300 340 moveto (Tel. 123 456 789) show
+
+showpage
