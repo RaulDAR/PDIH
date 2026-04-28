@@ -1,0 +1,51 @@
+newpath
+
+% Rectangulo para hacer el tronco del árbol grande
+0.5 0.2 0 setrgbcolor 
+100 100 moveto
+40 0 rlineto
+0 150 rlineto
+-40 0 rlineto
+closepath
+fill
+
+% Copa del árbol grande (varios círculos)
+
+0 0.6 0.2 setrgbcolor
+120 300 70 0 360 arc
+fill 
+
+0 0.7 0.3 setrgbcolor
+90 280 50 0 360 arc
+fill
+
+150 280 50 0 360 arc
+fill
+
+0 0.8 0.4 setrgbcolor
+120 340 50 0 360 arc
+fill
+
+% Árbol pequeño
+newpath
+0.5 0.2 0 setrgbcolor % Tronco
+350 100 moveto
+20 0 rlineto
+0 80 rlineto
+-20 0 rlineto
+closepath
+fill
+
+% Copa del árbol pequeño (todos los círculos del mismo color)
+
+0 0.5 0.1 setrgbcolor
+360 200 45 0 360 arc
+fill
+
+340 180 30 0 360 arc
+fill
+
+380 180 30 0 360 arc
+fill
+
+showpage
