@@ -1,0 +1,37 @@
+<< /PageSize [842 595] >> setpagedevice % Se usa para poner la página en apaisado
+
+% Círculos concéntricos
+421 297 200 0 360 arc
+0 0 1 setrgbcolor
+fill
+
+421 297 160 0 360 arc
+1 0 0 setrgbcolor
+fill
+
+421 297 120 0 360 arc
+0 1 0 setrgbcolor
+fill
+
+421 297 80 0 360 arc
+1 1 0 setrgbcolor
+fill
+
+% Cara sonriente
+newpath
+0.5 setgray
+421 297 40 0 360 arc 
+fill
+
+0 setgray
+406 307 5 0 360 arc
+fill 
+
+436 307 5 0 360 arc
+fill 
+
+newpath
+421 297 20 210 330 arc
+stroke 
+
+showpage
