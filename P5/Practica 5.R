@@ -47,7 +47,7 @@ listen(filtrado, 48000)
 eco_vector <- echo(basico, 48000, amp = c(0.8, 0.6, 0.4, 0.2, 0.1), delay = c(1, 2, 3, 4, 5), output="vector")
 
 # Convertirlo a formato Wave para poder guardarlo y plotearlo
-eco_wave <- Wave(left = eco_vector, 48000, 16)
+eco_wave <- Wave(left = eco_vector, samp.rate = 48000, bit = 16)
 
 writeWave(eco_wave, "eco.wav")
 listen(eco_wave, 48000)
