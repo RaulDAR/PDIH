@@ -36,7 +36,7 @@ python3 ej1_caras_imagen.py foto.jpg
 
 **Parámetros clave:**
 - `scaleFactor=1.05` → más preciso, algo más lento
-- `minNeighbors=6` → reduce falsos positivos
+- `minNeighbors=8` → reduce falsos positivos
 
 ---
 
