@@ -17,7 +17,7 @@ while True:
     if not ret:
         break
     gris = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    rostros = modelo.detectMultiScale(gris, scaleFactor=1.05, minNeighbors=6)
+    rostros = modelo.detectMultiScale(gris, scaleFactor=1.05, minNeighbors=8)
     for (x, y, fw, fh) in rostros:
         cv2.rectangle(frame, (x, y), (x+fw, y+fh), (0, 0, 255), 3)
     out.write(frame)
